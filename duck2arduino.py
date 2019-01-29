@@ -33,8 +33,8 @@ void loop()
 	//should code be runned in this loop?
 	if (i != 0) {
 		keyReport.modifiers = 0x00;
- 		keyReport.keys[0] = 0x00;
- 		HID().SendReport(2, &keyReport, sizeof(KeyReport));
+		keyReport.keys[0] = 0x00;
+		HID().SendReport(2, &keyReport, sizeof(KeyReport));
 
 		//parse raw duckencoder script
 		for (int i=0; i<DUCK_LEN; i+=2)
@@ -47,11 +47,11 @@ void loop()
 			}
 			else {
 				keyReport.modifiers = mod;
- 				keyReport.keys[0] = key;
- 				HID().SendReport(2, &keyReport, sizeof(KeyReport));
+				keyReport.keys[0] = key;
+				HID().SendReport(2, &keyReport, sizeof(KeyReport));
 				keyReport.modifiers = 0x00;
- 				keyReport.keys[0] = 0x00;
- 				HID().SendReport(2, &keyReport, sizeof(KeyReport));
+				keyReport.keys[0] = 0x00;
+				HID().SendReport(2, &keyReport, sizeof(KeyReport));
 			}
 		}
 		i--;
